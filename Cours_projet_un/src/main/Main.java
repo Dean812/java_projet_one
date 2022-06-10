@@ -25,7 +25,7 @@ public class Main {
 		System.out.println(y);
 
 		System.out.println("------------------------------------------------------------------");
-		
+
 		// replace(old,new) : permet de remplacer toute occurrence de la chaıne old
 		// dans la chaıne courante par new et retourne la nouvelle chaıne
 		String str = "bonjour les bons jours";
@@ -33,7 +33,7 @@ public class Main {
 		System.out.println(str2);
 
 		System.out.println("------------------------------------------------------------------");
-		
+
 		// indexOf(x) : retourne l’indice de la premiere occurrence de la valeur de x
 		// dans la chaıne, -1 sinon.
 		Integer position1 = str.indexOf("bon");
@@ -64,6 +64,58 @@ public class Main {
 		int k = 3;
 		Integer j = k;
 		System.out.println(j);
+
+		System.out.println("------------------------------------------------------------------");
+
+		// Post-incrementation
+		int i = 2;
+		int f = i += 2; // => i = i + 2
+
+		System.out.println(i); // Affiche 3
+		System.out.println(f); // Affiche 2
+
+		// Pre-incrementation
+		int a = 2;
+		int b = ++a;
+
+		System.out.println(a); // Affiche 3
+		System.out.println(b); // Affiche 3
+
+		// Post-incrementation
+		int c = 2;
+		int d = i += 2; // => i = i + 2
+
+		System.out.println(i); // Affiche 3
+		System.out.println(d); // Affiche 2
+
+		System.out.println("------------------------------------------------------------------");
+
+		System.out.println("bon" + " " + "jour");
+
+		int num1 = 3;
+		int num2 = 5;
+		int result = num1 + num2;
+		System.out.println(result);
+
+		System.out.println("------------------------------------------------------------------");
+
+		float floatNum = 4.95f;
+		System.out.println(floatNum);
+
+		char myChar = 'F';
+		System.out.println(myChar);
+
+		boolean bool = true;
+		System.out.println(bool);
+
+		int num3 = 100000;
+		System.out.println(num3);
+
+		long numLong = 1000000000L;
+		System.out.println(numLong);
+
+		double dble = 100.99d;
+		System.out.println(dble);
 
 		System.out.println("------------------------------------------------------------------");
 
