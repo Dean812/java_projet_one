@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -283,8 +285,41 @@ public class Main {
 			System.out.println(index);
 		}
 
-		System.out.println("------------------------------------------------------------------");
+		System.out.println("-------------------Array -  boucle for--------------------------");
 
+//		String[] sports = new String[3];
+		
+//		sports[0] = "Judo";
+//		sports[1] = "Tennis";
+//		sports[2] = "Foot";
+		
+//		String[] sports = new String[] { "Judo", "Tennis", "Foot" }; // Taille 3 Fixe
+		
+		// tableau statique
+		String[] sports = { "Judo", "Tennis", "Foot" }; // Taille 3 Fixe
+		
+		for (String sport : sports) {
+			System.out.println(sport);
+		}
+		
+		System.out.println(sports[1]);
+		
+		// Collection dynamique    - import de la List et Arrays
+		List<String> names = Arrays.asList("Tom", "Jerry", "Donald");
+		
+		
+		for(int l = 0; l < names.size(); l++ ) {
+			System.out.println(names.get(l));
+		}
+		
+		for (String name : names) {
+			System.out.println(name);
+		}
+		
+		names.forEach((name) -> System.out.println(name));
+		
+	
+		
 	}
 
 }
