@@ -41,18 +41,31 @@ public class Main {
 
 		int position2 = str.indexOf("bon", 3);
 		System.out.println(position2); // Affiche 12
-
+		
+		// Plusieurs méthodes pour tourner un int en string 
 		Integer z = 22;
-		String str3 = z.toString();
-		System.out.println(str3); // Affiche "22", si on vérifie le type, ce sera un String
+//		String str3 = z.toString();
+//		ou
+		String str3 = ((Integer) z).toString();   // ici avec un casting
+		System.out.println(str3); 
 
-		int v = 2; // casting - int est primitif et pas un objet
+		int v = 2; // casting avec un primitif et pas un objet
 		String str4 = ((Integer) v).toString();
 		System.out.println(str4); // Affiche "2"
 
 		int w = 4; // autre manière de gérer le int en string
 		String str5 = Integer.toString(w);
 		System.out.println(str5);
+		
+		int trob = 5;    // semble marcher avec int et integer
+		String strobs = String.valueOf(trob);
+		System.out.println(strobs);
+		
+		
+		// convertire en string
+		String string = "8";
+		byte g = Byte.parseByte(string);
+		System.out.println(g + " : i'm a String now");
 
 		System.out.println("------------conversion entre type +/- proche ----------------------");
 
