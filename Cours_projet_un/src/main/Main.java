@@ -12,7 +12,7 @@ public class Main {
 		// Il ne peut y avoir qu'une methode [...] main(String[] args) dans une
 		// application
 
-		System.out.print("Hello print() !");
+		System.out.print("Hello print() !");   // <-- ce n'est pas un println 
 		System.out.println("Hello ... !");
 		System.out.println("Hello println() !");
 
@@ -42,9 +42,9 @@ public class Main {
 		int position2 = str.indexOf("bon", 3);
 		System.out.println(position2); // Affiche 12
 
-		Integer z = 2;
+		Integer z = 22;
 		String str3 = z.toString();
-		System.out.println(str3); // Affiche "2"
+		System.out.println(str3); // Affiche "22", si on vérifie le type, ce sera un String
 
 		int v = 2; // casting - int est primitif et pas un objet
 		String str4 = ((Integer) v).toString();
@@ -54,7 +54,7 @@ public class Main {
 		String str5 = Integer.toString(w);
 		System.out.println(str5);
 
-		System.out.println("------------------------------------------------------------------");
+		System.out.println("------------conversion entre type +/- proche ----------------------");
 
 		// Pas besoin de convertir un type primitif vers son type Objet / Wrapper
 		Integer n = 2;
@@ -65,16 +65,16 @@ public class Main {
 		Integer j = k;
 		System.out.println(j);
 
-		System.out.println("------------------------------------------------------------------");
+		System.out.println("---------------pre/post incrémentation-------------------");
 
-		// Post-incrementation
-		int i = 2;
+		//  +=    >>  f = i  = i + 2
+		int i = 5;
 		int f = i += 2; // => i = i + 2
 
-		System.out.println(i); // Affiche 3
-		System.out.println(f); // Affiche 2
+		System.out.println(i); // Affiche 7
+		System.out.println(f); // Affiche 7
 
-		// Pre-incrementation
+		// Pre-incrementation - directement prit en compte 
 		int a = 2;
 		int b = ++a;
 
@@ -82,11 +82,31 @@ public class Main {
 		System.out.println(b); // Affiche 3
 
 		// Post-incrementation
-		int c = 2;
+		int c = 2;  // rappel i = 7
 		int d = i += 2; // => i = i + 2
 
-		System.out.println(i); // Affiche 3
-		System.out.println(d); // Affiche 2
+		System.out.println("affiche i :" + i); // Affiche 3
+		System.out.println("affiche d :" + d); // Affiche 2
+		
+	// my own version de l'expliation ▼ avec ++
+		int inti = 0;
+		int intj = 10;
+		inti = intj++;
+		System.out.println(intj); // Affiche 11
+		System.out.println(inti); // Affiche 10
+		// résultat , c'est l'incrémenter qui prend la valeur, mais pas la valeur dans 
+		//lequel on insert le calcule, on insert dans inti mais init reste a 10. 
+		
+//		très bonne exemple dans mon evernote - Orsys > java8 cours vocabulaire ▼ 
+		System.out.println("Exemple clair de post incrémentation : ");
+		int intJ = 10;
+		int intK = 11;
+		int intZ = (intJ++)+(++intK);
+		System.out.println("Le résultat est intZ = " + intZ);
+		System.out.println("Alors qu intJ et intK sont égales à : intJ = " + intJ + " ; et intK = " + intK + " .");
+		
+		
+		
 
 		System.out.println("------------------------------------------------------------------");
 
