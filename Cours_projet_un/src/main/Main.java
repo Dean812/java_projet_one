@@ -14,7 +14,7 @@ public class Main {
 		// Il ne peut y avoir qu'une methode [...] main(String[] args) dans une
 		// application
 
-		System.out.print("Hello print() !");   // <-- ce n'est pas un println 
+		System.out.print("Hello print() !"); // <-- ce n'est pas un println
 		System.out.println("Hello ... !");
 		System.out.println("Hello println() !");
 
@@ -43,13 +43,13 @@ public class Main {
 
 		int position2 = str.indexOf("bon", 3);
 		System.out.println(position2); // Affiche 12
-		
-		// Plusieurs méthodes pour tourner un int en string 
+
+		// Plusieurs méthodes pour tourner un int en string
 		Integer z = 22;
 //		String str3 = z.toString();
 //		ou
-		String str3 = ((Integer) z).toString();   // ici avec un casting
-		System.out.println(str3); 
+		String str3 = ((Integer) z).toString(); // ici avec un casting
+		System.out.println(str3);
 
 		int v = 2; // casting avec un primitif et pas un objet
 		String str4 = ((Integer) v).toString();
@@ -58,12 +58,11 @@ public class Main {
 		int w = 4; // autre manière de gérer le int en string
 		String str5 = Integer.toString(w);
 		System.out.println(str5);
-		
-		int trob = 5;    // semble marcher avec int et integer
+
+		int trob = 5; // semble marcher avec int et integer
 		String strobs = String.valueOf(trob);
 		System.out.println(strobs);
-		
-		
+
 		// convertire en string
 		String string = "8";
 		byte g = Byte.parseByte(string);
@@ -82,14 +81,14 @@ public class Main {
 
 		System.out.println("---------------pre/post incrémentation-------------------");
 
-		//  +=    >>  f = i  = i + 2
+		// += >> f = i = i + 2
 		int i = 5;
 		int f = i += 2; // => i = i + 2
 
 		System.out.println(i); // Affiche 7
 		System.out.println(f); // Affiche 7
 
-		// Pre-incrementation - directement prit en compte 
+		// Pre-incrementation - directement prit en compte
 		int a = 2;
 		int b = ++a;
 
@@ -97,31 +96,28 @@ public class Main {
 		System.out.println(b); // Affiche 3
 
 		// Post-incrementation
-		int c = 2;  // rappel i = 7
+		int c = 2; // rappel i = 7
 		int d = i += 2; // => i = i + 2
 
 		System.out.println("affiche i :" + i); // Affiche 3
 		System.out.println("affiche d :" + d); // Affiche 2
-		
-	// my own version de l'expliation ▼ avec ++
+
+		// my own version de l'expliation ▼ avec ++
 		int inti = 0;
 		int intj = 10;
 		inti = intj++;
 		System.out.println(intj); // Affiche 11
 		System.out.println(inti); // Affiche 10
-		// résultat , c'est l'incrémenter qui prend la valeur, mais pas la valeur dans 
-		//lequel on insert le calcule, on insert dans inti mais init reste a 10. 
-		
+		// résultat , c'est l'incrémenter qui prend la valeur, mais pas la valeur dans
+		// lequel on insert le calcule, on insert dans inti mais init reste a 10.
+
 //		très bonne exemple dans mon evernote - Orsys > java8 cours vocabulaire ▼ 
 		System.out.println("Exemple clair de post incrémentation : ");
 		int intJ = 10;
 		int intK = 11;
-		int intZ = (intJ++)+(++intK);
+		int intZ = (intJ++) + (++intK);
 		System.out.println("Le résultat est intZ = " + intZ);
 		System.out.println("Alors qu intJ et intK sont égales à : intJ = " + intJ + " ; et intK = " + intK + " .");
-		
-		
-		
 
 		System.out.println("------------------------------------------------------------------");
 
@@ -152,54 +148,52 @@ public class Main {
 		double dble = 100.99d;
 		System.out.println(dble);
 
-		System.out.println("-------------------Next , le scanner : rentrer une valeur dans la console-------------------------------------");
+		System.out.println(
+				"-------------------Next , le scanner : rentrer une valeur dans la console-------------------------------------");
 
-		Scanner scannette = new Scanner(System.in); // ne pas oublier l'import 
-		 
-		System.out.println("Veuillez insérer un chiffre :");   // mettre ce sysout avant la suite, sinon le message ne se voit qu'après
+		Scanner scannette = new Scanner(System.in); // ne pas oublier l'import
+
+		System.out.println("Veuillez insérer un chiffre :"); // mettre ce sysout avant la suite, sinon le message ne se
+																// voit qu'après
 //		int scani = scannette.nextInt();
 //		System.out.println("la valeur inserée est : "+scani);
 //		scannette.close(); // ne pas oublier le close().    si on close mais que l'on prévoit d'utiliser d'autres scanner, do not close the first ones
-		
-		
-		
-		Scanner scan = new Scanner(System.in);   // 2 scan d'affiler fait bugger sauf si on close pas les précédents. 
-		
+
+		Scanner scan = new Scanner(System.in); // 2 scan d'affiler fait bugger sauf si on close pas les précédents.
+
 		System.out.println("Rentre ton prénom : ");
 //		String scanName = scan.next(); // chaine , 1 mot max , pour une phrase nextLine()
 //		System.out.println("Je m'appelle " + scanName);
 //		scan.close();
-		
-		
+
 		Scanner scanChar = new Scanner(System.in);
-		
+
 		System.out.println("rentrez un simple caractères, du type : a , ç , ? , and so on");
 //		char scanC = scanChar.next().charAt(4);  // on peut marquer ce que l'on veut, ca ne prendra que le caractère 
 //		System.out.println(scanC);       //  choisi via .charAt( ici  ) si on met 4 avec le mot super > résultat > r   
-		
-		
-	//	scan.close();scannette.close();scanChar.close(); // bonne pratique ? je close tout les scanners 
-		
+
+		// scan.close();scannette.close();scanChar.close(); // bonne pratique ? je close
+		// tout les scanners
+
 //		nous avons vue 2 types de type pour le Scanner , il en exite d'autres
-		
-		
+
 		System.out.println("-------------------scanner and try catch -------------------------------------");
-		
-		Scanner scanTest = new Scanner(System.in); 
-		
-		System.out.println("Veuillez insérer une chiffre :");   
+
+		Scanner scanTest = new Scanner(System.in);
+
+		System.out.println("Veuillez insérer une chiffre :");
 		try {
-			int scanTry = scanTest.nextInt(); //Si un message d'erreur arrive ici, par ex, dans le cas ou l'on insere une lettre
-			System.out.println("la valeur inserée est : "+scanTry);
-		}catch (Exception e){  
+			int scanTry = scanTest.nextInt(); // Si un message d'erreur arrive ici, par ex, dans le cas ou l'on insere
+												// une lettre
+			System.out.println("la valeur inserée est : " + scanTry);
+		} catch (Exception e) {
 			System.out.println("prout");
-		} 
-		// il existe de nombreuses exeptions 
-		//   https://programming.guide/java/list-of-java-exceptions.html
-		
-		
-		//		Scanner avec try catch and print F        ▼
-		
+		}
+		// il existe de nombreuses exeptions
+		// https://programming.guide/java/list-of-java-exceptions.html
+
+		// Scanner avec try catch and print F ▼
+
 //		try (Scanner scanner = new Scanner(System.in)) {
 //
 //			System.out.println("Veuillez saisir un premier entier, svp ?");
@@ -216,12 +210,10 @@ public class Main {
 //		} catch (Exception e) {
 //			System.out.println("Veuillez rentrer un nombre, svp !");
 //		}
-		
-		
-		//   scaner avec une boucle while 
-		
-		
-		try(Scanner scanMe = new Scanner(System.in)){  // avec scanner, l'instance doit etre insérée avec le try( ) !!! 
+
+		// scaner avec une boucle while
+
+		try (Scanner scanMe = new Scanner(System.in)) { // avec scanner, l'instance doit etre insérée avec le try( ) !!!
 			while (true) {
 				System.out.println("Please enter your name : ");
 				String name = scanMe.next(); // name
@@ -235,13 +227,64 @@ public class Main {
 					break;
 				}
 			}
-		}catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println("Wrong name or/and password");
 			// e.printStackTrace(); indique de manière un peu plus précise ou est l'erreur
 		}
 
-		
+		System.out.println("----------------Boucle et comparateur  = >  < -------------------");
+		// comparateur
+		int n4 = 3;
+
+		if (n4 > 0) {
+			System.out.println(n4 + "est strictement positif");
+		} else if (n4 < 0) {
+			System.out.println(n4 + "est strictement negatif");
+		} else {
+			System.out.println(n4 + "est strictement null");
+		}
+
+		// switch
+		String str6 = "two";
+
+		switch (str6) {
+		case "one":
+			System.out.println("un");
+			break;
+		case "two":
+			System.out.println("deux");
+			break;
+		case "three":
+			System.out.println("trois");
+			break;
+		default:
+			System.out.println("autre");
+		}
+
+		int u = 0;
+
+		// Boucle while : a chaque iteration on teste si la condition est
+		// vraie avant d’acceder aux traitements
+		while (u < 5) {
+			System.out.println(u);
+			u++;
+		}
+
+		int q = 0;
+
+		// La Boucle do ... while execute le bloc au moins une fois ensuite
+		// elle verifie la condition
+		do {
+			System.out.println(q);
+			q++;
+		} while (q < 5);
+
+		for (int index = 0; index < 5; index++) {
+			System.out.println(index);
+		}
+
+		System.out.println("------------------------------------------------------------------");
+
 	}
 
 }
