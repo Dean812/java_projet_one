@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -150,8 +152,96 @@ public class Main {
 		double dble = 100.99d;
 		System.out.println(dble);
 
-		System.out.println("------------------------------------------------------------------");
+		System.out.println("-------------------Next , le scanner : rentrer une valeur dans la console-------------------------------------");
 
+		Scanner scannette = new Scanner(System.in); // ne pas oublier l'import 
+		 
+		System.out.println("Veuillez insérer un chiffre :");   // mettre ce sysout avant la suite, sinon le message ne se voit qu'après
+//		int scani = scannette.nextInt();
+//		System.out.println("la valeur inserée est : "+scani);
+//		scannette.close(); // ne pas oublier le close().    si on close mais que l'on prévoit d'utiliser d'autres scanner, do not close the first ones
+		
+		
+		
+		Scanner scan = new Scanner(System.in);   // 2 scan d'affiler fait bugger sauf si on close pas les précédents. 
+		
+		System.out.println("Rentre ton prénom : ");
+//		String scanName = scan.next(); // chaine , 1 mot max , pour une phrase nextLine()
+//		System.out.println("Je m'appelle " + scanName);
+//		scan.close();
+		
+		
+		Scanner scanChar = new Scanner(System.in);
+		
+		System.out.println("rentrez un simple caractères, du type : a , ç , ? , and so on");
+//		char scanC = scanChar.next().charAt(4);  // on peut marquer ce que l'on veut, ca ne prendra que le caractère 
+//		System.out.println(scanC);       //  choisi via .charAt( ici  ) si on met 4 avec le mot super > résultat > r   
+		
+		
+	//	scan.close();scannette.close();scanChar.close(); // bonne pratique ? je close tout les scanners 
+		
+//		nous avons vue 2 types de type pour le Scanner , il en exite d'autres
+		
+		
+		System.out.println("-------------------scanner and try catch -------------------------------------");
+		
+		Scanner scanTest = new Scanner(System.in); 
+		
+		System.out.println("Veuillez insérer une chiffre :");   
+		try {
+			int scanTry = scanTest.nextInt(); //Si un message d'erreur arrive ici, par ex, dans le cas ou l'on insere une lettre
+			System.out.println("la valeur inserée est : "+scanTry);
+		}catch (Exception e){  
+			System.out.println("prout");
+		} 
+		// il existe de nombreuses exeptions 
+		//   https://programming.guide/java/list-of-java-exceptions.html
+		
+		
+		//		Scanner avec try catch and print F        ▼
+		
+//		try (Scanner scanner = new Scanner(System.in)) {
+//
+//			System.out.println("Veuillez saisir un premier entier, svp ?");
+//			int n1 = scanner.nextInt();
+//
+//			System.out.println("Veuillez saisir un second entier, svp ?");
+//			int n2 = scanner.nextInt();
+//
+//			int res = n1 + n2;
+//			System.out.printf("la somme de %d et de %d vaut %d\n", n1, n2, res);
+//
+//			scanner.close();
+//
+//		} catch (Exception e) {
+//			System.out.println("Veuillez rentrer un nombre, svp !");
+//		}
+		
+		
+		//   scaner avec une boucle while 
+		
+		
+		try(Scanner scanMe = new Scanner(System.in)){  // avec scanner, l'instance doit etre insérée avec le try( ) !!! 
+			while (true) {
+				System.out.println("Please enter your name : ");
+				String name = scanMe.next(); // name
+
+				System.out.println("Please enter your password : ");
+				String pswd = scanMe.next(); // number
+
+//				if (name == "John" && pswd == "6321") {    doesn't work with ==  but works w/ .equals
+				if (name.equals("John") && pswd.equals("6321")) { // equals ne prend que les String
+					System.out.println("Welcome John");
+					break;
+				}
+			}
+		}catch(Exception e)
+		{
+			System.out.println("Wrong name or/and password");
+			// e.printStackTrace(); indique de manière un peu plus précise ou est l'erreur
+		}
+
+		
 	}
 
 }
